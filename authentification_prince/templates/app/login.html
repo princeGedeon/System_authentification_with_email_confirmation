@@ -1,0 +1,18 @@
+
+{% extends 'base.html'%}
+{% block content%}
+{% for message in messages%}
+<strong>{{message}}</strong>
+{%endfor%}
+
+<p>Login Now</p>
+<form method="post" action="">
+{% csrf_token %}
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" placeholder="Entrez votre username">
+    <br>
+     <label for="password">Password</label>
+    <input type="password" name="password" id="password" placeholder="Entrez votre name">
+    <br>
+    <input type="submit" value="login">
+{% endblock %}
